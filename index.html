@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Menuju Formulir</title>
+</head>
+<body style="text-align:center; font-family:Arial; padding-top:100px;">
+
+  <h2>Mohon Tunggu Sebentar</h2>
+  <p>Link formulir akan tersedia dalam:</p>
+  <h1 id="countdown">5</h1>
+
+  <a id="formLink"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSdpUQBlxwZB4xeJN2LKixyYf2tiykHYygj-pZXMw-EwZNFRXQ/viewform?usp=preview"
+     style="display:none; font-size:20px;">
+     👉 Buka Formulir
+  </a>
+
+  <script>
+    let waktu = 5;
+    let countdown = document.getElementById("countdown");
+    let link = document.getElementById("formLink");
+
+    let timer = setInterval(function() {
+      waktu--;
+      countdown.textContent = waktu;
+
+      if (waktu <= 0) {
+        clearInterval(timer);
+        countdown.style.display = "none";
+        link.style.display = "inline";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
